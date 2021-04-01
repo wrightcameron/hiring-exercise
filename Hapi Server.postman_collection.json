@@ -22,7 +22,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"username\": \"test_user_1\",\n    \"password\": \"Password123!\",\n    \"firstName\": \"Test\",\n    \"lastName\": \"User\",\n    \"email\": \"test_user_2@test.com\"\n}"
+          "raw": "{\n    \"username\": \"{{user}}\",\n    \"password\": \"{{password}}\",\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"email\": \"{{$randomEmail}}\"\n}"
         },
         "url": {
           "raw": "http://localhost:5000/user",
