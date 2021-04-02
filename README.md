@@ -80,7 +80,7 @@ The user interface should be created using one of the following frameworks:
 
 ### Submission Instructions
 
-Please submit your code as a pull request to this repository, include @m4l1c3 and @badgerops as reviewers. Once submitted, you'll receive a calendly link for scheduling some time to walk through the code and talk about your approach.
+Please submit your code as a pull request to this repository, include @m4l1c3 and @badgerops as reviewers. Once submitted, you can use the calendly link in the invitation email to schedule some time to walk through the code and talk about your approach.
 
 ### Acknowledgements
 
