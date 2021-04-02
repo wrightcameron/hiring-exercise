@@ -44,8 +44,15 @@ After assessing the situation you've identified the following prioritized list o
    1. Birth year
    2. Favorite color
       1. These should be displayed when viewing a single user
+3. Add a password reset page
+   1. Don't worry about e-mail notifications or one time password reset keys, just a page that allows a user to update their password
+   2. Require the following fields:
+      1. User ID
+      2. Current password
+      3. New password
+      4. Repeat new password
 
-#### Additional Details
+#### Additional Details/Requirements:
 
 The user interface should be created using one of the following frameworks:
 
@@ -53,10 +60,13 @@ The user interface should be created using one of the following frameworks:
 - Vue
 - Angular
 
-#### Extra Credit
+#### Items for extra credit:
 
 - Include an automated testing suite that uses a common testing library such as Jasmine, Jest, or Mocha.
-  - Keep it simple here, test your logic, mock any third party services or dependencies, but give yourself some guard rails
+  - Keep it simple:
+    - Test your logic, mock any third party services or dependencies
+    - Give yourself some guard rails
+    - Any UI tests can simply validate your components are rendering when properly initialized
 - Enforce authentication for all API endpoints except: `/authenticate` and `/user/create`
   - Search the code for commented out: `auth: 'jwt'` as a starting point
   - Postman will also have some information on sending the `Authorization` header as a reference
