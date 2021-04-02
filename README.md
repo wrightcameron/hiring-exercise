@@ -45,25 +45,22 @@ After assessing the situation you've identified the following prioritized list o
    2. Favorite color
       1. These should be displayed when viewing a single user
 
+#### Additional Details
+
 The user interface should be created using one of the following frameworks:
 
 - React
 - Vue
 - Angular
 
-#### Additional Requirements
-
-- The application should be built using either an Angular, Vue, or React frontend (preferably
-  React)
-
 #### Extra Credit
 
 - Include an automated testing suite that uses a common testing library such as Jasmine, Jest, or Mocha.
-  - Keep it simple here, test your logic, mock any third party services or dependencies.
+  - Keep it simple here, test your logic, mock any third party services or dependencies, but give yourself some guard rails
 - Enforce authentication for all API endpoints except: `/authenticate` and `/user/create`
   - Search the code for commented out: `auth: 'jwt'` as a starting point
   - Postman will also have some information on sending the `Authorization` header as a reference
-- Use a modern UI/UX library such as Ant, Bootstrap, Angular Material, Vuetify, or Material-UI
+- Use a modern UI/UX library such as Ant, Bootstrap, Angular Material, Vuetify, or Material-UI to implement the styling/components for your UI.
 - Use Docker to containerize your application and run using the included docker-compose
 - Include a CI/CD infrastructure using a common tool such as TeamCity, Travis CI, or Jenkins
 - Deployed and host the app on one of the major cloud platforms
@@ -77,6 +74,8 @@ Please submit your code as a pull request to this repository, include @m4l1c3 an
 
 ### Acknowledgements
 
-This exercise was built on top of the wonderful work of @joshjconlin to put together a reference app.
+This exercise was built on top of the work of the wonderful @joshjconlin to put together a reference app.
 
 This has been brought under the entity PlexTrac-Labs using the same license and includes enhancements specific to the organization.
+
+Original repository: https://github.com/joshjconlin/hapi-19-typescript-server
