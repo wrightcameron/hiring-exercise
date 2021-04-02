@@ -1,0 +1,175 @@
+{
+  "info": {
+    "_postman_id": "cfc57741-6080-4e81-a9e3-3874a3e586d3",
+    "name": "Hapi Server",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "<token_goes_here>",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"{{user}}\",\n    \"password\": \"{{password}}\",\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"email\": \"{{$randomEmail}}\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/user",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["user"],
+          "query": [
+            {
+              "key": "username",
+              "value": "test_user",
+              "disabled": true
+            },
+            {
+              "key": "password",
+              "value": null,
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Authenticate",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"{{user}}\",\n    \"password\": \"{{password}}\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/authenticate",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["authenticate"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "<token_goes_here>",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"{{$randomEmail}}\",\n    \"firstName\": \"{{$randomFirstName}}\",\n    \"lastName\": \"{{$randomLastName}}\",\n    \"email\": \"{{$randomEmail}}\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/user/{userId}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["user", "{userId}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete User",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "<token_goes_here>",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:5000/user/{userId}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["user", "{userId}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get User",
+      "request": {
+        "auth": {
+          "type": "bearer"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/user/{userId}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["user", "{userId}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List Users",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "<token_goes_here>",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/user",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["user"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
