@@ -46,7 +46,7 @@ After assessing the situation you've identified the following prioritized list o
    1. Birth year
    2. Favorite color
       1. These should be displayed when viewing a single user
-3. Add a password reset page
+3. Add a password reset page and API endpoints:
    1. Don't worry about e-mail notifications or one time password reset keys, just a page that allows a user to update their password
    2. Require the following fields:
       1. User ID
@@ -80,11 +80,11 @@ The user interface should be created using one of the following frameworks:
   - Azure
   - Google Cloud Platform
 
-### Submission Instructions
+### Submission Instructions:
 
 Please submit your code as a pull request to this repository, include @m4l1c3 and @badgerops as reviewers. Once submitted, you can use the calendly link in the invitation email to schedule some time to walk through the code and talk about your approach.
 
-### Acknowledgements
+### Acknowledgements:
 
 This exercise was built on top of the work of the wonderful @joshjconlin to put together a reference app.
 
