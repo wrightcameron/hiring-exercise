@@ -17,8 +17,9 @@ docker-compose up -d mongo
 ### Starting API
 
 ```bash
-npm install;
-npm run dev;
+cd /path/to/your/forked/repo
+npm install
+npm run dev
 ```
 
 ### The task at hand...
