@@ -36,7 +36,7 @@ After assessing the situation you've identified the following prioritized list o
 
 #### Showstoppers:
 
-1. The previous developer did not build a user interface for the application, you'll need a user interface to interact with it:
+1. The previous developer did not build a user interface for the application, you'll need a user interface to interact with it, we recommend create-react-app as a starting point:
    1. Login page
    2. List users
    3. View a single user
