@@ -1,8 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5000"; //todo figure out how to have this just reference path
-
 export default function UpdateUserForm({ user }) {
   const firstNameRef = useRef();
   const lastNameRef = useRef();
@@ -20,7 +18,7 @@ export default function UpdateUserForm({ user }) {
     const birthYear = birthYearRef.current.value;
     const favColor = favColorRef.current.value;
     axios
-      .put(`${BASE_URL}/user/${user._id}`, {
+      .put(`/user/${user._id}`, {
         firstName: firstName,
         lastName: lastName,
         username: username,

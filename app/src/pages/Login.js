@@ -3,7 +3,6 @@ import axios from "axios";
 import CredentialWarning from "../components/CredentialWarning";
 
 const LOCAL_STORAGE_KEY = "app.user";
-const BASE_URL = "http://localhost:5000"; //todo figure out how to have this just reference path
 
 export default function Login() {
   //Need a state to store userId
@@ -27,7 +26,7 @@ export default function Login() {
 
     //Lets try this out, see how clean it is
     axios
-      .post(`${BASE_URL}/authenticate`, {
+      .post(`/authenticate`, {
         username: name,
         password: password
       })

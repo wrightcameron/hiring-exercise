@@ -3,8 +3,6 @@ import axios from "axios";
 
 import UserInfo from "../components/UserInfo";
 
-const BASE_URL = "http://localhost:5000";
-
 export default function UserList() {
   const [users, setUsers] = useState([]);
 
@@ -14,7 +12,7 @@ export default function UserList() {
   }, []);
 
   function handleUsers() {
-    axios.get(`${BASE_URL}/user`).then(response => {
+    axios.get(`/user`).then(response => {
       setUsers(response.data);
     });
   }

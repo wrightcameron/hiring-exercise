@@ -6,7 +6,6 @@ import UpdatePasswordForm from "../components/UpdatePasswordForm";
 import UpdateUserForm from "../components/UpdateUserForm";
 
 const LOCAL_STORAGE_KEY = "app.user";
-const BASE_URL = "http://localhost:5000";
 
 export default function Profile() {
   const [user, setUser] = useState({
@@ -28,7 +27,7 @@ export default function Profile() {
   }, []);
 
   function handleUser(key) {
-    axios.get(`${BASE_URL}/user/${key}`).then(response => {
+    axios.get(`/user/${key}`).then(response => {
       setUser(response.data);
     });
   }
