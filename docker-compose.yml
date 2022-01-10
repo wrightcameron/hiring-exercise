@@ -6,6 +6,22 @@ services:
       - 27017:27017
     volumes:
       - mongodb_data_container:/data/db
+  nodejs-backend:
+    image: hiring-exercise-backend:latest
+    environment:
+      - host=0.0.0.0
+      - port=5000
+      - database=mongodb://mongo:27017/local
+    ports:
+      - 5000:5000
+  react-frontend:
+    image: hiring-exercise-frontend:latest
+    environment:
+      - host=0.0.0.0
+      - port=3000
+      - backend=http://nodejs-backend:5000
+    ports:
+      - 3000:3000
 
 volumes:
   mongodb_data_container:
