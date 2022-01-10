@@ -28,11 +28,6 @@ function NavBar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/resetpassword">
-                  Reset Password
-                </NavLink>
-              </li>
-              <li className="nav-item">
                 <NavLink className="nav-link" to="/logout">
                   Log Out
                 </NavLink>

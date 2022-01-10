@@ -3,16 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
 
-//import Login from './pages/login'
-
 //Importing pages
 import NavBar from "./components/NavBar";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import UserList from "./pages/UserList";
-import ResetPassword from "./pages/ResetPassword";
-
-//TODO Need access our name and password
 
 function App() {
   return (
@@ -23,7 +18,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/userlist" element={<UserList />} />
-        <Route path="/resetpassword" element={<ResetPassword />} />
       </Routes>
     </Router>
 
