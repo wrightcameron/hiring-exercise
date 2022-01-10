@@ -3,10 +3,9 @@ import axios from "axios";
 import CredentialWarning from "../components/CredentialWarning";
 
 const LOCAL_STORAGE_KEY = "app.user";
+const BASE_URL = "http://localhost:5000"; //todo figure out how to have this just reference path
 
 export default function Login() {
-  const BASE_URL = "http://localhost:5000"; //todo figure out how to have this just reference path
-
   //Need a state to store userId
   const [userId, setUserId] = useState([]);
   const [isWrongLogin, setIsWrongLogin] = useState(false);
@@ -43,19 +42,33 @@ export default function Login() {
   }
 
   return (
-    <div>
-      <form className="login" onClick={handleLoginSubmit}>
-        <label>
-          Name:
-          <input ref={nameRef} type="text" name="name" required />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input ref={passwordRef} type="text" name="password" required />
-        </label>
-        <br />
-        <input type="submit" />
+    <div className="row align-items-center g-lg-5 py-5 col-md-10 mx-auto col-lg-5">
+      <form className="pform-signin login" onSubmit={handleLoginSubmit}>
+        <div className="form-floating">
+          <input
+            id="UserNameInput"
+            className="form-control"
+            ref={nameRef}
+            type="text"
+            name="name"
+            required
+          />
+          <label htmlFor="UserNameInput">User Name</label>
+        </div>
+        <div className="form-floating">
+          <input
+            id="passwordInput"
+            className="form-control"
+            ref={passwordRef}
+            type="text"
+            name="password"
+            required
+          />
+          <label htmlFor="passwordInput">Password</label>
+        </div>
+        <button className="w-100 btn btn-lg btn-primary" type="submit">
+          Log In
+        </button>
         {isWrongLogin ? <CredentialWarning /> : null}
       </form>
     </div>
