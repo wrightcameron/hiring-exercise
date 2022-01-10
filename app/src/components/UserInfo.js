@@ -3,14 +3,19 @@ import React from "react";
 export default function UserInfo({ user }) {
   return (
     <div className="Profile">
-      <div className="User-firstName" class="mb-3">
-        {user.firstName}
-      </div>
-      <div className="User-lastName">{user.lastName}</div>
-      <div className="User-userName">{user.username}</div>
-      <div className="User-email">{user.email}</div>
-      <div className="User-birthYear">{user.birthYear}</div>
-      <div className="User-favColor">{user.favColor}</div>
+      <h2 className="User-firstName mb-3">
+        {user.firstName} {user.lastName}
+      </h2>
+      <dl>
+        <dt>User Name</dt>
+        <dd className="User-userName">{user.username}</dd>
+        <dt>Email</dt>
+        <dd className="User-email">{user.email}</dd>
+        <dt>Year of Birth</dt>
+        <dd className="User-birthYear">{user.birthYear}</dd>
+        <dt>Favorite Color</dt>
+        <dd className="User-favColor">{user.favColor}</dd>
+      </dl>
     </div>
   );
 }

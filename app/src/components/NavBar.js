@@ -7,7 +7,7 @@ function NavBar() {
       <nav className="navbar navbar-expand navbar-dark bg-dark">
         <div className="container">
           <NavLink className="navbar-brand" to="/">
-            Hiring Exercise
+            PlexTrac Hiring Exercise
           </NavLink>
           <div>
             <ul className="navbar-nav ml-auto">
