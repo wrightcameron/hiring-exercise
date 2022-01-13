@@ -42,7 +42,11 @@ export default function Profile() {
     setShowChangeInfoForm(false);
   }
 
-  function handleDeleteAccountButton(e) {}
+  function handleDeleteAccountButton(e) {
+    axios.delete(`/user/${user._id}`).then(res => {
+      window.location = "/login";
+    });
+  }
 
   return (
     <div className="container">

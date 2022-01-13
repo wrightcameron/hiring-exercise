@@ -11,12 +11,20 @@ export default function UpdateUserForm({ user }) {
 
   function handleUpdateUserSubmit(e) {
     e.preventDefault();
-    const firstName = firstNameRef.current.value;
-    const lastName = lastNameRef.current.value;
-    const username = usernameRef.current.value;
-    const email = emailRef.current.value;
-    const birthYear = birthYearRef.current.value;
-    const favColor = favColorRef.current.value;
+    let firstName = firstNameRef.current.value;
+    let lastName = lastNameRef.current.value;
+    let username = usernameRef.current.value;
+    let email = emailRef.current.value;
+    let birthYear = birthYearRef.current.value;
+    let favColor = favColorRef.current.value;
+
+    if (firstName === "") firstName = user.firstName;
+    if (lastName === "") lastName = user.lastName;
+    if (username === "") username = user.username;
+    if (email === "") email = user.email;
+    if (birthYear === "") birthYear = user.birthYear;
+    if (favColor === "") favColor = user.favColor;
+    console.log("The first name" + firstName);
     axios
       .put(`/user/${user._id}`, {
         firstName: firstName,
