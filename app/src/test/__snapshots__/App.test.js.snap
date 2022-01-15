@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  <div
+    className="navigation"
+  >
+    <nav
+      className="navbar navbar-expand navbar-dark bg-dark"
+    >
+      <div
+        className="container"
+      >
+        <a
+          aria-current="page"
+          className="navbar-brand active"
+          href="/"
+          onClick={[Function]}
+        >
+          PlexTrac Hiring Exercise
+        </a>
+        <div>
+          <ul
+            className="navbar-nav ml-auto"
+          >
+            <li
+              className="nav-item"
+            >
+              <a
+                aria-current="page"
+                className="nav-link active"
+                href="/"
+                onClick={[Function]}
+              >
+                Log In
+                <span
+                  className="sr-only"
+                >
+                  (For now)
+                </span>
+              </a>
+            </li>
+            <li
+              className="nav-item"
+            >
+              <a
+                className="nav-link"
+                href="/profile"
+                onClick={[Function]}
+              >
+                Profile
+              </a>
+            </li>
+            <li
+              className="nav-item"
+            >
+              <a
+                className="nav-link"
+                href="/userlist"
+                onClick={[Function]}
+              >
+                User List
+              </a>
+            </li>
+            <li
+              className="nav-item"
+            >
+              <a
+                className="nav-link"
+                href="/logout"
+                onClick={[Function]}
+              >
+                Log Out
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>,
+  <div
+    className="row align-items-center g-lg-5 py-5 col-md-10 mx-auto col-lg-5"
+  >
+    <form
+      className="pform-signin login"
+      onSubmit={[Function]}
+    >
+      <div
+        className="form-floating"
+      >
+        <input
+          className="form-control"
+          id="UserNameInput"
+          name="name"
+          required={true}
+          type="text"
+        />
+        <label
+          htmlFor="UserNameInput"
+        >
+          User Name
+        </label>
+      </div>
+      <div
+        className="form-floating"
+      >
+        <input
+          className="form-control"
+          id="passwordInput"
+          name="password"
+          required={true}
+          type="text"
+        />
+        <label
+          htmlFor="passwordInput"
+        >
+          Password
+        </label>
+      </div>
+      <button
+        className="w-100 btn btn-lg btn-primary"
+        type="submit"
+      >
+        Log In
+      </button>
+    </form>
+  </div>,
+]
+`;

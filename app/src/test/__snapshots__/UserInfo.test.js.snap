@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="Profile"
+>
+  <h2
+    className="User-firstName mb-3"
+  >
+    John
+     
+    Doe
+  </h2>
+  <dl>
+    <dt>
+      User Name
+    </dt>
+    <dd
+      className="User-userName"
+    >
+      jdoe
+    </dd>
+    <dt>
+      Email
+    </dt>
+    <dd
+      className="User-email"
+    >
+      johndoe@mail.com
+    </dd>
+    <dt>
+      Year of Birth
+    </dt>
+    <dd
+      className="User-birthYear"
+    >
+      1999
+    </dd>
+    <dt>
+      Favorite Color
+    </dt>
+    <dd
+      className="User-favColor"
+    >
+      Blue
+    </dd>
+  </dl>
+</div>
+`;

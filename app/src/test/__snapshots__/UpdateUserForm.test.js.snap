@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<form
+  className="updateUser"
+  onSubmit={[Function]}
+>
+  <div>
+    <input
+      id="currentFirstNameInput"
+      name="firstName"
+      placeholder="John"
+      type="text"
+    />
+    <label
+      htmlFor="currentFirstNameInput"
+    >
+      First Name
+    </label>
+  </div>
+  <div>
+    <input
+      id="currentLastNameInput"
+      name="lastName"
+      placeholder="Doe"
+      type="text"
+    />
+    <label
+      htmlFor="currentLastNameInput"
+    >
+      Last Name
+    </label>
+  </div>
+  <div>
+    <input
+      id="currentUserNameInput"
+      name="username"
+      placeholder="jdoe"
+      type="text"
+    />
+    <label
+      htmlFor="currentUserNameInput"
+    >
+      User Name
+    </label>
+  </div>
+  <div>
+    <input
+      id="currentEmailInput"
+      name="email"
+      placeholder="johndoe@mail.com"
+      type="text"
+    />
+    <label
+      htmlFor="currentEmailInput"
+    >
+      Email
+    </label>
+  </div>
+  <div>
+    <input
+      id="currentBirthYearInput"
+      name="birthYear"
+      placeholder="1999"
+      type="text"
+    />
+    <label
+      htmlFor="currentBirthYearInput"
+    >
+      Year of Birth
+    </label>
+  </div>
+  <div>
+    <input
+      id="currentFavColorInput"
+      name="favColor"
+      placeholder="Blue"
+      type="text"
+    />
+    <label
+      htmlFor="currentFavColorInput"
+    >
+      Favorite Color
+    </label>
+  </div>
+  <button
+    className="w-100 btn btn-lg btn-primary"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;

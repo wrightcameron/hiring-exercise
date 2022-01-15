@@ -22,7 +22,6 @@ export default function Profile() {
   //Load the page with the users profile
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    //TODO Try cath here so we don't lose the entire page
     if (storedUser && storedUser.user) handleUser(storedUser.user._id);
   }, []);
 
