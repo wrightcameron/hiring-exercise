@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import axios from "axios";
 
-import logo from "./logo.svg";
 import "./App.css";
 
 //Importing pages
