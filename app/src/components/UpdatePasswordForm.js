@@ -1,7 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
+import axios from "axios";
 
 import CredentialWarning from "./CredentialWarning";
-export default function UpdatePasswordForm() {
+export default function UpdatePasswordForm({ user }) {
   const currentPasswordRef = useRef();
   const newPasswordRef = useRef();
   const retypePasswordRef = useRef();
@@ -10,7 +11,23 @@ export default function UpdatePasswordForm() {
 
   function handlePasswordSubmit(e) {
     e.preventDefault();
-    //TODO Create Route for Changing password
+    const currentPassword = currentPasswordRef.current.value;
+    const newPassword = newPasswordRef.current.value;
+    const retypePassword = retypePasswordRef.current.value;
+    if (newPassword !== retypePassword) {
+      return;
+    }
+    axios
+      .put(`/password/${user._id}`, {
+        password: currentPassword,
+        newPassword: newPassword
+      })
+      .then(res => {
+        window.location = "/profile";
+      })
+      .catch(error => {
+        setIsWrongLogin(true);
+      });
   }
 
   return (

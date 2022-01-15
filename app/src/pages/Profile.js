@@ -64,7 +64,7 @@ export default function Profile() {
         Delete Account
       </button>
       {showChangeInfoForm ? <UpdateUserForm user={user} /> : null}
-      {showChangePasswordForm ? <UpdatePasswordForm /> : null}
+      {showChangePasswordForm ? <UpdatePasswordForm user={user} /> : null}
     </div>
   );
 }
