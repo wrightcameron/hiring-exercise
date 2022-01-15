@@ -7,7 +7,7 @@ export default function UpdatePasswordForm({ user }) {
   const newPasswordRef = useRef();
   const retypePasswordRef = useRef();
 
-  const [isWrongLogin, setIsWrongLogin] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   function handlePasswordSubmit(e) {
     e.preventDefault();
@@ -15,6 +15,7 @@ export default function UpdatePasswordForm({ user }) {
     const newPassword = newPasswordRef.current.value;
     const retypePassword = retypePasswordRef.current.value;
     if (newPassword !== retypePassword) {
+      setErrorMsg("Passwords don't match");
       return;
     }
     axios
@@ -26,7 +27,7 @@ export default function UpdatePasswordForm({ user }) {
         window.location = "/profile";
       })
       .catch(error => {
-        setIsWrongLogin(true);
+        setErrorMsg("Invalid Credentials");
       });
   }
 
@@ -65,7 +66,7 @@ export default function UpdatePasswordForm({ user }) {
       <button className="w-100 btn btn-lg btn-primary" type="submit">
         Submit
       </button>
-      {isWrongLogin ? <CredentialWarning /> : null}
+      {errorMsg.length > 0 ? <CredentialWarning msg={errorMsg} /> : null}
     </form>
   );
 }

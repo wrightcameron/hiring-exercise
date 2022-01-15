@@ -7,7 +7,7 @@ const LOCAL_STORAGE_KEY = "app.user";
 export default function Login() {
   //Need a state to store userId
   const [userId, setUserId] = useState([]);
-  const [isWrongLogin, setIsWrongLogin] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   //References to Password and Name in form
   const nameRef = useRef();
@@ -36,7 +36,7 @@ export default function Login() {
         console.log(response.data);
       })
       .catch(error => {
-        setIsWrongLogin(true);
+        setErrorMsg("Invalid Credentials");
       });
   }
 
@@ -68,7 +68,7 @@ export default function Login() {
         <button className="w-100 btn btn-lg btn-primary" type="submit">
           Log In
         </button>
-        {isWrongLogin ? <CredentialWarning /> : null}
+        {errorMsg.length > 0 ? <CredentialWarning msg={errorMsg} /> : null}
       </form>
     </div>
   );
