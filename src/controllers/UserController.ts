@@ -4,6 +4,7 @@ import { User } from "models/user";
 import Token from "../auth/token";
 import UserRepository from "../repositories/UserRepository";
 import { Credentials } from "auth/auth";
+import AuthController from "./AuthController";
 
 class UserController {
   private static validateAccess(
@@ -110,6 +111,34 @@ class UserController {
       return h
         .response({ status: "error", error: error.message })
         .code(400)
+        .takeover();
+    }
+  }
+
+  public async updatePassword(request, h): Promise<Hapi.ServerResponse> {
+    try {
+      const credentials: Credentials = request.auth.credentials;
+      const passwords = request.payload;
+
+      const userId: string = request.params.userId;
+      const user: User = await UserRepository.getById(userId);
+
+      UserController.validateAccess(credentials, user);
+
+      // Verify current password is correct
+      const validUser = await AuthController.validateUser(
+        user.username,
+        passwords.password
+      );
+
+      // Replace current password with new password
+      validUser.password = passwords.newPassword;
+      const updateUser: User = await UserRepository.update(validUser, userId);
+      return h.response(updateUser);
+    } catch (error) {
+      return h
+        .response({ status: "error", error: error.message })
+        .code(403)
         .takeover();
     }
   }

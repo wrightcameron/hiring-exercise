@@ -1,6 +1,6 @@
 {
   "info": {
-    "_postman_id": "cfc57741-6080-4e81-a9e3-3874a3e586d3",
+    "_postman_id": "2ed42741-c204-421e-9f7c-f9d586bb922b",
     "name": "Hapi Server",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
@@ -95,6 +95,30 @@
           "host": ["localhost"],
           "port": "5000",
           "path": ["user", "{userId}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update Password",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"password\": \"{{password}}\",\n    \"newPassword\": {{newPassword}}\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/password/{userId}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["password", "{userId}"]
         }
       },
       "response": []
