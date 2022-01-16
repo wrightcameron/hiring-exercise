@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import axios from "axios";
 
 export default function UpdateUserForm({ user }) {
