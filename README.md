@@ -69,7 +69,7 @@ The user interface should be created using one of the following frameworks:
     - Test your logic, mock any third party services or dependencies
     - Give yourself some guard rails
     - Any UI tests can simply validate your components are rendering when properly initialized
-- [ ] Enforce authentication for all API endpoints except: `/authenticate` and `/user/create`
+- [x] Enforce authentication for all API endpoints except: `/authenticate` and `/user/create`
   - Search the code for commented out: `auth: 'jwt'` as a starting point
   - Postman will also have some information on sending the `Authorization` header as a reference
 - [x] Use a modern UI/UX library such as Ant, Bootstrap, Angular Material, Vuetify, or Material-UI to implement the styling/components for your UI.
