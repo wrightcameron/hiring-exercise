@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import { LOCAL_STORAGE_KEY, getAuthToken } from "../App";
 import UserInfo from "../components/UserInfo";
 
 export default function UserList() {
@@ -12,9 +13,15 @@ export default function UserList() {
   }, []);
 
   function handleUsers() {
-    axios.get(`/user`).then(response => {
-      setUsers(response.data);
-    });
+    axios
+      .get(`/user`, {
+        headers: {
+          Authorization: "Bearer " + getAuthToken(LOCAL_STORAGE_KEY)
+        }
+      })
+      .then(response => {
+        setUsers(response.data);
+      });
   }
 
   return users.map(user => {

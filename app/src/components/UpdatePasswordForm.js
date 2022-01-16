@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import axios from "axios";
 
 import CredentialWarning from "./CredentialWarning";
+import { LOCAL_STORAGE_KEY, getAuthToken } from "../App";
+
 export default function UpdatePasswordForm({ user }) {
   const currentPasswordRef = useRef();
   const newPasswordRef = useRef();
@@ -14,15 +16,24 @@ export default function UpdatePasswordForm({ user }) {
     const currentPassword = currentPasswordRef.current.value;
     const newPassword = newPasswordRef.current.value;
     const retypePassword = retypePasswordRef.current.value;
+
     if (newPassword !== retypePassword) {
       setErrorMsg("Passwords don't match");
       return;
     }
     axios
-      .put(`/password/${user._id}`, {
-        password: currentPassword,
-        newPassword: newPassword
-      })
+      .put(
+        `/password/${user._id}`,
+        {
+          password: currentPassword,
+          newPassword: newPassword
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + getAuthToken(LOCAL_STORAGE_KEY)
+          }
+        }
+      )
       .then(res => {
         window.location = "/profile";
       })

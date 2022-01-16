@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import { LOCAL_STORAGE_KEY, getAuthToken } from "../App";
 import UserInfo from "../components/UserInfo";
 import UpdatePasswordForm from "../components/UpdatePasswordForm";
 import UpdateUserForm from "../components/UpdateUserForm";
-
-const LOCAL_STORAGE_KEY = "app.user";
 
 export default function Profile() {
   const [user, setUser] = useState({
@@ -19,6 +18,7 @@ export default function Profile() {
 
   const [showChangeInfoForm, setShowChangeInfoForm] = useState(false);
   const [showChangePasswordForm, setShowChangePasswordForm] = useState(false);
+
   //Load the page with the users profile
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
@@ -26,9 +26,15 @@ export default function Profile() {
   }, []);
 
   function handleUser(key) {
-    axios.get(`/user/${key}`).then(response => {
-      setUser(response.data);
-    });
+    axios
+      .get(`/user/${key}`, {
+        headers: {
+          Authorization: "Bearer " + getAuthToken(LOCAL_STORAGE_KEY)
+        }
+      })
+      .then(response => {
+        setUser(response.data);
+      });
   }
 
   function handleChangeInfoButton(e) {
@@ -42,9 +48,19 @@ export default function Profile() {
   }
 
   function handleDeleteAccountButton(e) {
-    axios.delete(`/user/${user._id}`).then(res => {
-      window.location = "/login";
-    });
+    axios
+      .delete(
+        `/user/${user._id}`,
+        {},
+        {
+          headers: {
+            Authorization: "Bearer " + getAuthToken(LOCAL_STORAGE_KEY)
+          }
+        }
+      )
+      .then(res => {
+        window.location = "/login";
+      });
   }
 
   return (

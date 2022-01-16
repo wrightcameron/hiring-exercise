@@ -8,8 +8,7 @@ export default function getRoutes(server: Hapi.Server): void {
     method: "PUT",
     path: "/password/{userId}",
     options: {
-      auth: false,
-      // auth: "jwt",
+      auth: "jwt",
       validate: {
         params: {
           userId: Joi.string().required()

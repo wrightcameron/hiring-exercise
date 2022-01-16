@@ -1,8 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import axios from "axios";
-import CredentialWarning from "../components/CredentialWarning";
 
-const LOCAL_STORAGE_KEY = "app.user";
+import { LOCAL_STORAGE_KEY } from "../App";
+import CredentialWarning from "../components/CredentialWarning";
 
 export default function Login() {
   //Need a state to store userId

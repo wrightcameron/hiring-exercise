@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import axios from "axios";
 
+import { LOCAL_STORAGE_KEY, getAuthToken } from "../App";
+
 export default function UpdateUserForm({ user }) {
   const firstNameRef = useRef();
   const lastNameRef = useRef();
@@ -22,18 +24,26 @@ export default function UpdateUserForm({ user }) {
     if (lastName === "") lastName = user.lastName;
     if (username === "") username = user.username;
     if (email === "") email = user.email;
-    if (birthYear === "") birthYear = user.birthYear;
+    if (birthYear === "") birthYear = String(user.birthYear);
     if (favColor === "") favColor = user.favColor;
-    console.log("The first name" + firstName);
+
     axios
-      .put(`/user/${user._id}`, {
-        firstName: firstName,
-        lastName: lastName,
-        username: username,
-        email: email,
-        birthYear: birthYear,
-        favColor: favColor
-      })
+      .put(
+        `/user/${user._id}`,
+        {
+          firstName: firstName,
+          lastName: lastName,
+          username: username,
+          email: email,
+          birthYear: birthYear,
+          favColor: favColor
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + getAuthToken(LOCAL_STORAGE_KEY)
+          }
+        }
+      )
       .then(response => {
         window.location = "/profile";
       });

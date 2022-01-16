@@ -37,16 +37,16 @@ After assessing the situation you've identified the following prioritized list o
 #### Showstoppers:
 
 1. The previous developer did not build a user interface for the application, you'll need a user interface to interact with it, we recommend create-react-app as a starting point:
-   1. Login page
-   2. List users
-   3. View a single user
-   4. Delete a user
-   5. Update a user
-2. A couple of fields were left missing on the user records, we'll want to add:
+   1. [x] Login page
+   2. [x] List users
+   3. [x] View a single user
+   4. [x] Delete a user
+   5. [x] Update a user
+2. [x] A couple of fields were left missing on the user records, we'll want to add:
    1. Birth year
    2. Favorite color
       1. These should be displayed when viewing a single user
-3. Add a password reset page and API endpoints:
+3. [x] Add a password reset page and API endpoints:
    1. Don't worry about e-mail notifications or one time password reset keys, just a page that allows a user to update their password
    2. Require the following fields:
       1. User ID
@@ -64,16 +64,16 @@ The user interface should be created using one of the following frameworks:
 
 #### Items for extra credit:
 
-- Include an automated testing suite that uses a common testing library such as Jasmine, Jest, or Mocha.
+- [ ] Include an automated testing suite that uses a common testing library such as Jasmine, Jest, or Mocha.
   - Keep it simple:
     - Test your logic, mock any third party services or dependencies
     - Give yourself some guard rails
     - Any UI tests can simply validate your components are rendering when properly initialized
-- Enforce authentication for all API endpoints except: `/authenticate` and `/user/create`
+- [ ] Enforce authentication for all API endpoints except: `/authenticate` and `/user/create`
   - Search the code for commented out: `auth: 'jwt'` as a starting point
   - Postman will also have some information on sending the `Authorization` header as a reference
-- Use a modern UI/UX library such as Ant, Bootstrap, Angular Material, Vuetify, or Material-UI to implement the styling/components for your UI.
-- Use Docker to containerize your application and run using the included docker-compose
+- [x] Use a modern UI/UX library such as Ant, Bootstrap, Angular Material, Vuetify, or Material-UI to implement the styling/components for your UI.
+- [x] Use Docker to containerize your application and run using the included docker-compose
 - Include a CI/CD infrastructure using a common tool such as TeamCity, Travis CI, or Jenkins
 - Deployed and host the app on one of the major cloud platforms
   - AWS
