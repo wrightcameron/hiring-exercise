@@ -22,6 +22,29 @@ npm install
 npm run dev
 ```
 
+### Starting React Website
+
+```bash
+cd /path/to/your/forked/repo/app
+npm install
+npm start
+```
+
+### Running it all with Docker
+
+Docker containers have been created for the backend node.js and front end react app. Before running docker-compose, the docker images have to be built.
+
+```bash
+cd /path/to/your/forked/repo
+docker build -t hiring-exercise-backend .
+cd /path/to/your/forked/repo/app
+docker build -t hiring-exercise-frontend .
+cd ..
+docker0-compose up -d
+```
+
+Default port for node.js is 5000, for react its 3000. At the moment these ports can not be the same, but they can be changed by changing env variables.
+
 ### The task at hand...
 
 You've just started at a new company, and your manager is greeting you in your cubicle, they look nervous.
