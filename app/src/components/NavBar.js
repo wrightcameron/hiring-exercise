@@ -1,6 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+import { LOCAL_STORAGE_KEY } from "../App";
+
+function handleLogOut() {
+  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(null));
+  window.location = "/login";
+}
+
 function NavBar() {
   return (
     <div className="navigation">
@@ -28,9 +35,9 @@ function NavBar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/logout">
+                <div className="nav-link" onClick={handleLogOut} revert>
                   Log Out
-                </NavLink>
+                </div>
               </li>
             </ul>
           </div>
