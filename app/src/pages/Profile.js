@@ -49,15 +49,11 @@ export default function Profile() {
 
   function handleDeleteAccountButton(e) {
     axios
-      .delete(
-        `/user/${user._id}`,
-        {},
-        {
-          headers: {
-            Authorization: "Bearer " + getAuthToken(LOCAL_STORAGE_KEY)
-          }
+      .delete(`/user/${user._id}`, {
+        headers: {
+          Authorization: "Bearer " + getAuthToken(LOCAL_STORAGE_KEY)
         }
-      )
+      })
       .then(res => {
         window.location = "/login";
       });
